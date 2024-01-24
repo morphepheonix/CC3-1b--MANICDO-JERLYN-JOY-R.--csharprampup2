@@ -1,24 +1,26 @@
-﻿namespace CSHARP_Ramp_Up_2_PART_1;
+namespace CSHARP_Ramp_Up_2_PART_1;
 
 class Program
 {
-    static void Main()
+    static void Main() 
     {
         // PART 1 - POUNDS TO KILOGRAMS
-        Console.Write("Weight in Pounds (lbs): ");
-        string weightInput = Console.ReadLine();
+        Console.Write("Weight in Pounds (lbs): "); // USER INPUT VALUE
+        string weightInput = Console.ReadLine(); // USED TO READ NEXT LINE
 
-        if (double.TryParse(weightInput, out double weightInPounds))
+        if (double.TryParse(weightInput, out double weightInPounds)) // it attempts to convert the user's input to a double.
+                                                                     // (tryparse) used when dealing with user input, where the input may not always be in a valid numeric format. 
         {
             double weightInKilograms = weightInPounds * 0.453592; // FORMULA FOR POUNDS TO KILOGRAMS // (*) USED ARITHMETIC OPERATOR 
-            Console.WriteLine($"Weight converted to Kilograms (kg): {weightInKilograms:F2}");
+            Console.WriteLine($"Weight converted to Kilograms (kg): {weightInKilograms:F2}"); // ($) Interpolated strings provide a concise and readable way to embed expressions within strings.
+                                                                                              // used when you want to create string by combining static text with the values of variables.
         }
         else
         {
             Console.WriteLine("INVALID INPUT. Please enter a valid weight."); // CHECKING IF THE USER INPUT WAS INCORRECT
         }
 
-        Console.WriteLine("========================================");
+        Console.WriteLine("========================================"); // USED FOR PARTITIONING CONVERSIONS.
 
 
         // PART 1 - MILES TO KILOMETERS
@@ -67,8 +69,8 @@ class Program
             Console.Write($"Age of Student {i}: ");
             string ageInput = Console.ReadLine();
 
-            if (int.TryParse(ageInput, out int age) && age >= 0)
-            {
+            if (int.TryParse(ageInput, out int age) && age >= 0) // (>=) Greater than or equal to
+            {                                                    // (&&) Logical and: Returns True if both statements are true
                 sumOfAges += age;
             }
             else
@@ -93,7 +95,6 @@ class Program
 
         string story = $@"In the desolate wastelands, Captain {Protagonist}, a relentless bounty hunter with {Artifact}, pursued her nemesis, the elusive rogue known only as {Antagonist}. Their bitter rivalry echoed through the abandoned ruins as Captain {Protagonist} closed in, determined to bring justice to the lands. With a {Ability} of {Weaponry}, she cornered {Antagonist}, ending the tale of their enmity in a frozen showdown beneath the pale moonlight.";
         Console.WriteLine(story);
-        Console.ReadLine();
+        Console.Read();
     }
 }
-
