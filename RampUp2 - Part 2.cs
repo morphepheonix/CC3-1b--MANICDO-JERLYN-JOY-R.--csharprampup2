@@ -38,7 +38,7 @@ class Program
             int sum = 0; // sum variable accumulates the sum of the numbers.
 
             Console.Write("Formula: ");
-            for (int i = 1; i <= n; i++) // iterates from 1 to the user's input.
+            for (int i = 1; i <= n; i++) // a block of code that will repeat itself over and over again until a given condition is true
 
             {
                 sum += i;
